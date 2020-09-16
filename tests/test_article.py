@@ -27,4 +27,4 @@ class ArticleTest(unittest.TestCase):
         self.assertEqual(self.new_article.author,"Nakish")
         self.assertEqual(self.new_article.title,"Python Must Be Crazy")
         self.assertEqual(self.new_article.urlToImage,"imageToUrl")
-        self.assertEqual(self.new_article.publishedAt,"2020-04-04")
+        self.assertEqual(self.new_article.publishedAt,"2020-09-15")
