@@ -1,0 +1,41 @@
+
+<!-- Displaying sources macro -->
+{% macro displaySourcesList(sources_list) %}
+
+{% for source in sources_list %}
+<div class="panel panel-default d-flex flex-row justify-content-left col-sm-12 col-md-4 col-lg-2" style="margin:5px;">
+    <div class="panel-heading">
+        <h4>{{ source.name }} </h4>
+    </div>
+    <div class="panel-body">
+        {{source.description|truncate(150)}}
+        <a class="btn btn-success btn-lg text-center" name="source_name" href="/sources/articles/{{source.id}}">
+            View articles
+        </a>
+    </div>
+</div>
+{% endfor %}
+{% endmacro %}
+
+<!-- Displaying articles macro -->
+{% macro displayArticles(articles_list) %}
+
+{% for article in articles_list %}
+    <div class="panel panel-default col-sm-12 col-md-4 col-lg-2" style="margin:5px;padding:2px ;">
+        <div class="panel-heading">
+            <h4>{{article.title}}</h4>
+        </div>
+        <div class="panel-body">
+            <img src="{{article.urlToImage}}" alt="{{article.title}} image" class="img-responsive">
+
+            <p class="text-left"> {{ article.description }}</p>
+            published on:  {{ article.publishedAt|truncate(13) }} <br>
+            <a href="{{ article.url }}">Read article....</a>
+        </div>
+        <div class="panel-footer">
+            Author: {{article.author}}
+        </div>
+    </div>
+
+{% endfor %}
+{% endmacro %}
