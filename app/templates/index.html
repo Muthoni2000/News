@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+<!-- Content block -->
+{% block content %}
+<div id="text">
+    <div>
+        <img src="../static/images/xygeexmuxrwatswmp1kl.webp" style="width: 100%; height: auto;">
+    </div>
+    <div id="welcome">
+        <a href="#content" class="btn btn-warning btn-lg"><span class="badge">Welcome to 411 News</span></a>
+    </div>
+    <div id="content">
+        <ul>
+            {{ macro.displaySourcesList(sources)}}
+        </ul>
+    </div>
+</div>
+{% endblock%}
